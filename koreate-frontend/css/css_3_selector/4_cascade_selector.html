@@ -1,0 +1,52 @@
+<!-- 3/28 4_cascade_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title>cascading</title>
+
+    <style>
+        * {
+            color: greenyellow;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        h2 {
+            background-color: aqua;
+        }
+
+        /*  (id --  #),(class -- .)    */
+        #bg {
+            background-color: skyblue;
+        }
+
+        #color {
+            color: blue;
+        }
+
+        /* 글자 크기 px로 지정 */
+        .size {
+            font-size: 50px;
+        }
+
+        .color {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TYPE 선택자</h1>
+    <!-- h2{선택자 적용}*4 -->
+    <!-- inline > id > class > type > * -->
+    <h2 id="bg">선택자 적용</h2>
+    <h2 id="color">선택자 적용</h2>
+    <h2 class="size">선택자 적용</h2>
+    <h2 style="color:black" id="color" class="size color">선택자 적용</h2>
+</body>
+
+</html>

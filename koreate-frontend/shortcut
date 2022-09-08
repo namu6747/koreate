@@ -1,0 +1,18 @@
+ctrl + enter : 현재 행 아래에 새로운 행 추가
+ctrl + shift + enter : 현재 행 위에 새로운 행 추가
+ctrl + k + f : 코드  정렬
+ctrl + shift + k :  현재 행 삭제
+ctrl + d :  특정 문자열 다중 선택
+ctrl + h : 문자 교체
+ctrl + k + c : 블럭 주석 처리
+shift  + tap : 현재 행의 탭 삭제
+li{}*10 : 리스트 10개 생성
+ctrl + shift + 방향키 : 여러 행 묶기
+alt + 방향키 : 현재 행 위 아래로 이동
+alt + 마우스 좌 클릭 : 여러 행 선택
+    
+*폴더 경로
+    / 최상위 경로
+    ./ 현재 폴더
+    ../ 상위폴더
+    

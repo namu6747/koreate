@@ -1,0 +1,71 @@
+<!-- 4/6 9_star.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+
+        //  for 내부에 조건문이 있는데 내부에 if 문을 다시 쓸 필요가 없다.
+
+        let  size =  prompt("가로 길이를 입력하세요.");
+        let x,y,i,j;
+        let h = size*2-1
+        for(y=1;y<=h;y++){
+            if(y<=size){
+                for(x=1;x<=y;x++)
+                document.write("*");
+            }else{
+                for(x=1;x<=h-y;x++)
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+            for(i=1; i<=size; i++){
+                for(j=0; j<i; j++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+            for(i=1; i<size; i++){
+                for(j=size; j>i; j--){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+
+        let max = size * 2 - 1;
+        for(i=1;i<=max;i++){
+            if(i<size){
+                for(j=0;j<=i;j++){
+                    document.write("*");
+                }
+            }else{
+                for(j=1;j<=max-i;j++){
+                    document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+
+        let count  = 1;
+        for(i=1; i<=max; i++){
+            for(j=1; j<=count; j++){
+                document.write("*");
+            }
+            if(i<size){
+                count++;
+            }else{
+                count--;
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

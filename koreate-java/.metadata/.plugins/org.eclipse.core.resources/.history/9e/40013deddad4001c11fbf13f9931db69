@@ -1,0 +1,9 @@
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+public class Test1_3 {
+	public static void main(String[] args) {
+		InputStream is = new FileInputStream("test.txt");
+	}
+
+}

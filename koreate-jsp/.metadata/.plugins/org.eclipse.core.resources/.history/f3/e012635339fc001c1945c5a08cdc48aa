@@ -1,0 +1,24 @@
+package repositories;
+
+import beans.MemberVO;
+
+// DataBase Access Object
+public interface MemberDAO {
+	// 회원가입
+	boolean memberJoin(MemberVO member);
+	// 로그인 처리
+	MemberVO memberLogin(String id, String pass);
+	// 회원정보 수정
+	boolean memberUpdate(MemberVO member);
+	// cookie - 
+}
+
+
+
+
+
+
+
+
+
+

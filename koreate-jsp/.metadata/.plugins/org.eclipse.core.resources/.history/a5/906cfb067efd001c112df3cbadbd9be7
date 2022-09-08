@@ -1,0 +1,15 @@
+package repositorie;
+
+import java.util.ArrayList;
+
+import vo.MemberVO;
+
+public interface ManagementDAO {
+	
+	public ArrayList<MemberVO> getMemberList();
+
+	public ArrayList<MemberVO> getMemberList(int startRow, int pageCount);
+	// 전체 회원 수
+	public int getMemberListCount();
+	
+}

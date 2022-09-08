@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0;
+}
+
+nav{
+    margin:0 auto;
+    width: 1000px;
+}
+
+ul.normal{
+    list-style: none;
+}
+
+ul.normal li{
+    /* float: left; */
+    /* 인라인 블록 마진은 음수로 땡겨줘야함 */
+    display: inline-block;
+    margin-left:-6px;
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+    border-right: none;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+    background-color: gray;
+    color: white;
+}
+
+ul.normal li:last-child{
+    border-right: 1px solid black;
+}
+
+ul.normal li:hover{
+    cursor: pointer;
+    color: gray;
+    background-color: white;
+}

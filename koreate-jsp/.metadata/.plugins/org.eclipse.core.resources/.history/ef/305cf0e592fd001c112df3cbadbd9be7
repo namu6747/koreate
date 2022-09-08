@@ -1,0 +1,11 @@
+package repositories;
+
+import java.util.ArrayList;
+
+import beans.MemberVO;
+
+public interface ManagementDAO {
+	
+	ArrayList<MemberVO> getMemberList();
+	
+}

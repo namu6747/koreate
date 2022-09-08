@@ -1,0 +1,161 @@
+<!-- 3/25 HTML.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+</head>
+
+<body>
+
+    <!-- 1 -->
+    <h1>HTML5 Basic</h1>
+    <h2>HTML - <a href="http://www.koreate.net/" target="_blank">한국기술교육직업전문학교</a></h2>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum hic autem, expedita, distinctio aliquid quia
+        saepe beatae illum laudantium asperiores magni molestiae porro? Magni omnis quam officia corporis, neque
+        facilis.</p>
+    <p>Enim rem tempore, minima optio harum, cum laudantium deserunt impedit aperiam sequi unde voluptas animi autem
+        distinctio aspernatur in rerum, officiis voluptatibus praesentium perferendis. Ex aut blanditiis sequi error
+        laudantium?</p>
+    <br><hr><br>
+
+    <!-- 2 -->
+    <ul>
+        <li>따뜻한 음료</li>
+        <ol>
+            <li>커피</li>
+            <li>녹차</li>
+            <li>둥굴레차</li>
+        </ol>
+        <li>차가운 음료</li>
+        <ol>
+            <li>커피</li>
+            <li>스무디</li>
+            <li>식혜</li>
+        </ol>
+    </ul>
+    <br><hr><br>
+
+    <!-- 3 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="6">한국의 차</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="6">뿌리차</th>
+                <td>인삼차</td>
+                <th rowspan="9">과일차</th>
+                <td>수정과</td>
+                <th rowspan="5">잎차</th>
+                <td>뽕잎차</td>
+            </tr>
+            <tr>
+                <td>당귀차</td>
+                <td>유자차</td>
+                <td>감잎차</td>
+            </tr>
+            <tr>
+                <td>생강차</td>
+                <td>구기자차</td>
+                <td>솔잎차</td>
+            </tr>
+            <tr>
+                <td>칡차</td>
+                <td>대추차</td>
+                <td>국화차</td>
+            </tr>
+            <tr>
+                <td>둥굴레차</td>
+                <td>오미자차</td>
+                <td>이슬차</td>
+            </tr>
+            <tr>
+                <td>마차</td>
+                <td>매실차</td>
+                <th rowspan="4">기타</th>
+                <td>두중차</td>
+            </tr>
+            <tr>
+                <th rowspan="3">곡물차</th>
+                <td>보리차</td>
+                <td>모과차</td>
+                <td>영지버섯차</td>
+            </tr>
+            <tr>
+                <td>옥수수차</td>
+                <td>산수유차</td>
+                <td>귤강차</td>
+            </tr>
+            <tr>
+                <td>현미차</td>
+                <td>탱자차</td>
+                <td>쌍화차</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><hr><br>
+
+    <!-- 4 -->
+    <!-- 대괄호는 속성추가 -->
+    <!-- table[border="1"]>(tr>th[colspan="2"])((tr>td*2)*6)(tr>td[colspan="2"]) -->
+    <form method="get">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">회원가입</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="email" value="neo@naver.com" /></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="name" value="네오" /></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="pw" value="12345" /></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type="password" name="pwcheck" value="12345" /></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="gender" value="man" />남성
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="woman" checked />여성
+                        </label>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td>
+                        <input type="number" name="age" placeholder="숫자를 입력하세요." min="1" />
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="제출" />
+                        <input type="button" value="제출">
+                        <button type="submit">제출</button>
+                        <button type="button">제출</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+
+</html>

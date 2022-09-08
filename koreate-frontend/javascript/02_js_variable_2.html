@@ -1,0 +1,41 @@
+<!-- 4/4 02_js_variable_2.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style></style>
+    <script>
+        // 아래 쪽에 선언한 var 가 위 쪽에서도 적용됨
+        temp = '천재';
+        console.log(temp);
+        var temp = "최기근";
+        console.log(temp);
+        
+        // let <-> var - var와 달리 아래 쪽으로만 적용됨
+        // console.log(temp2);
+        let temp2 = "최기근";
+        // block scope
+        {
+            var tempGlobal = "Global fields";
+            let tempLocal = "local fields";
+        }
+
+        console.log(tempGlobal);
+        // console.log(tempLocal);
+
+        // var ES6 이전에 사용되던 변수 선언 키워드
+        // let ES6 부터 적용된 변수 선언 키워드
+        // read / write
+
+        // const (constant:상수)
+        const pi = 3.141592;
+        // pi = 3.14;
+        console.log(Math.PI);
+        console.log(pi);
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

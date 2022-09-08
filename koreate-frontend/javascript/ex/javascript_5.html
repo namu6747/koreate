@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        let quiz = true;
+        let nice = 50;
+        let k = 0;
+        while (quiz) {
+            let int = prompt("1~100까지의 정수를 입력해주세요.");
+            k++;
+                if (int < nice) {
+                    alert(`낮습니다. 추측횟수 : ${k}`)
+                }
+                else if (int > nice) {
+                    alert(`높습니다. 추측횟수 : ${k}`)
+                } else if (int == nice) {
+                    alert(`성공입니다. 추측횟수 : ${k}`)
+                    quiz = false;
+                } else {
+                    alert("1~100까지의 정수를 입력해주세요.")
+                }
+            }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

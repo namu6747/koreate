@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        [class] {color: blue;}
+        /* 전부 */
+        /* p[class="icox"] {color: red;} */
+        /* 1,4 */
+        /* p[class~="icox"] {color: red;} */
+        /* 1,5 */
+        /* p[class|="icox"] {color: red;} */
+        /* 1,2,5 */
+        /* p[class^="icox"] {color: red;} */
+        /* 1,3 */
+        p[class$="icox"] {color: pink  !important;}
+        /* 전부 */
+        p[class*="icox"] {color: red;}
+    </style>
+</head>
+    
+<body>
+    <h3 class="logo">서울특별시</h3>
+    <h3>경기도</h3>
+    <ol>
+    <li><p class="icox">icox</p></li>
+    <li><p class="icoxpage">icoxpage</p></li>
+    <li><p class="screenicox">screenicox</p></li>
+    <li><p class="I icox U">I icox U</p></li>
+    <li><p class="icox-1">icox-1</p></li>
+</ol>
+</body>
+</html>

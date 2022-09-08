@@ -1,0 +1,7 @@
+package utils;
+
+import javax.mail.Authenticator;
+
+public class GoogleAuthentication extends Authenticator{
+
+}

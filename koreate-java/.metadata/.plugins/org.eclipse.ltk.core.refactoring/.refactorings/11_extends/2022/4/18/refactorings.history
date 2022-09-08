@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;extends1.base.diamond.ㅊ&apos; to &apos;C&apos;&#x0D;&#x0A;- Original project: &apos;11_extends&apos;&#x0D;&#x0A;- Original element: &apos;extends1.base.diamond.ㅊ&apos;&#x0D;&#x0A;- Renamed element: &apos;extends1.base.diamond.C&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ㅊ&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;extends1.base.diamond{ㅊ.java[ㅊ" matchStrategy="1" name="C" qualified="false" references="true" similarDeclarations="false" stamp="1651192796555" textual="false" version="1.0"/>
+</session>

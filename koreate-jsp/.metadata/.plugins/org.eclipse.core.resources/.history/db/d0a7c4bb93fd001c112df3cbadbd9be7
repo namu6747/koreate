@@ -1,0 +1,37 @@
+package repositories;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import beans.MemberVO;
+import utils.Criteria;
+import utils.DBCPUtil;
+
+public class ManagementDAOImpl implements ManagementDAO {
+
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	
+	@Override
+	public ArrayList<MemberVO> getMemberList(Criteria cri) {
+		ArrayList<MemberVO> list = new ArrayList<>();
+		
+		String sql = "SELECT * FROM mvc_member"
+				   + " ORDER BY num DESC "
+				   + " limit ?, ?";
+		conn = DBCPUtil.getConnection();
+		
+		pstmt = conn.prepareStatement(sql);
+		
+		return list;
+	}
+
+	@Override
+	public int getMemberTotalCount() {
+		return 0;
+	}
+
+}

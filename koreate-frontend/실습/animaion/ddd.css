@@ -1,0 +1,19 @@
+div.redBall{
+    position: absolute;
+    bottom:0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: red;
+    animation:ddd 1000ms ease-out alternate infinite;
+}
+
+@keyframes ddd{
+    0%{
+        right: 0;
+    }
+    100%{
+        right: 300px;
+    }
+}
+

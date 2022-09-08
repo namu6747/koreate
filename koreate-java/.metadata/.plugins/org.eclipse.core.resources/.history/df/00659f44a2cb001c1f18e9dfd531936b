@@ -1,0 +1,22 @@
+package singleton;
+
+public class Main {
+	private static final int User_NUM = 5;
+	private static final int THREAD_NUM = 5;
+
+	public static void main(String[] args) {
+//		User[] user = new User[User_NUM];
+		UserThread[] user = new UserThread[THREAD_NUM];
+
+		for (int i = 0; i < User_NUM; i++) {
+			user[i] = new UserThread((i + 1) + "-thread") {
+				public void run() {
+					Printer printer = Printer.getPrinter();
+					printer.print(Thread.currentThread().getName() + " printer using " + printer.toString() + ".");
+				}
+			};
+			user[i].start(); // Runnable의 실체 메소드 run은 start로 호출
+		}
+		;
+	}
+}

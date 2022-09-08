@@ -1,0 +1,20 @@
+package repositories;
+
+import java.util.ArrayList;
+
+import beans.MemberVO;
+
+public interface ManagementDAO {
+	
+	// limit startRow, perPAgeNum
+	ArrayList<MemberVO> getMemberList();
+	
+}
+
+
+
+
+
+
+
+

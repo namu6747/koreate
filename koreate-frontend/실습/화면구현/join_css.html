@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title>join</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        th {
+            font-size: larger;
+            line-height: 3em;
+        }
+
+        table td {
+            text-align: right;
+        }
+
+        table td:last-child {
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let btn = document.getElementById("btn");
+            let text = document.getElementsByClassName("text_box");
+            let pw = document.getElementById("text_pw");
+            let pwc = document.getElementById("text_pwc");
+
+            btn.onclick = function () {
+                for (let i = 0; i < text.length; i++) {
+                    if (text[i].value.trim() == "" || text[i].value.trim() == null) {
+                        text[i].focus();
+                        alert(`${text[i].name}를 작성해주세요`);
+                        return;
+                    }
+
+                    // if(text[i].id == "text_pw") text_pw = text[i];
+                    // if(text[i].id == "text_pwc" && text_pw.value != text[i].value){
+                    //     alert("비밀번호가 일치하지 않습니다.");
+                    //     text_pw.value = "";
+                    //     text[i].value ="";
+                    //     text_pw.focus();
+                    //     return;
+                    // }
+                }
+
+
+                if (pw.value != pwc.value) {
+                    alert("비밀번호가 일치하지 않습니다.")
+                    pw.value = ""
+                    pwc.value = ""
+                    pw.focus();
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table cellspacing="15px">
+        <tr>
+            <th colspan="3">회원가입</th>
+        </tr>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="아이디" class="text_box" id="text_id"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="비밀번호" class="text_box" id="text_pw"></td>
+        </tr>
+        <tr>
+            <td>비밀번호확인</td>
+            <td><input type="password" name="비밀번호확인" class="text_box" id="text_pwc"></td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td><input type="text" name="생년월일" class="text_box" id="text_birth"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="이름" class="text_box" id="text_name"></td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><input type="tel" name="전화번호" class="text_box" id="text_tel"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><button type="button" id="btn">회원가입</button> <button type="button">정보수정</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

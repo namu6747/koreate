@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;choi.CHoiJob&apos; to &apos;ChoiJob&apos;&#x0D;&#x0A;- Original project: &apos;GitForkTestProject&apos;&#x0D;&#x0A;- Original element: &apos;choi.CHoiJob&apos;&#x0D;&#x0A;- Renamed element: &apos;choi.ChoiJob&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CHoiJob&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;choi{CHoiJob.java[CHoiJob" matchStrategy="1" name="ChoiJob" qualified="false" references="true" similarDeclarations="false" stamp="1655360680403" textual="false" version="1.0"/>
+</session>

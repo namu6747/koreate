@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;c_9_collections&apos; to &apos;c9_collections&apos;&#x0D;&#x0A;- Original project: &apos;17_collection_framework&apos;&#x0D;&#x0A;- Original element: &apos;17_collection_framework/src/c_9_collections&apos;&#x0D;&#x0A;- Renamed element: &apos;17_collection_framework/src/c9_collections&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;c_9_collections&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;c_9_collections" name="c9_collections" qualified="false" references="true" stamp="1652162470295" textual="false" version="1.0"/>
+</session>

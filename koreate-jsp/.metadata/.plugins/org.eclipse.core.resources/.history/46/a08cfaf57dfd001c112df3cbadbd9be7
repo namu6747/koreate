@@ -1,0 +1,51 @@
+package vo;
+
+public class PageInfo {
+
+	int page; 		// 요청 페이지
+	int startPage;  // block 시작페이지
+	int endPage;	// block 마지막 페이지
+	int maxPage;	// 전체 페이지 block 수
+	
+	public PageInfo() {}
+	
+	public PageInfo(int page, int startPage, int endPage, int maxPage) {
+		this.page = page;
+		this.startPage = startPage;
+		this.endPage = endPage;
+		this.maxPage = maxPage;
+	}
+
+
+
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public int getStartPage() {
+		return startPage;
+	}
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
+	}
+	public int getEndPage() {
+		return endPage;
+	}
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
+	}
+	public int getMaxPage() {
+		return maxPage;
+	}
+	public void setMaxPage(int maxPage) {
+		this.maxPage = maxPage;
+	}
+	@Override
+	public String toString() {
+		return "PageInfo [page=" + page + ", startPage=" + startPage + ", endPage=" + endPage + ", maxPage=" + maxPage
+				+ "]";
+	}
+
+}

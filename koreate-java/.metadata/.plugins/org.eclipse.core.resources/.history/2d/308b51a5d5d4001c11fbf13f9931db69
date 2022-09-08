@@ -1,0 +1,17 @@
+class Member{
+	private String id;
+	private String password;
+	private String name;
+}
+
+public class Test1_2 {
+
+	public static void main(String[] args) {
+		Member choi = new Member();
+		choi.setId("id001");
+		choi.setPassword("pw001");
+		choi.setName("최기근");
+		
+	}
+
+}

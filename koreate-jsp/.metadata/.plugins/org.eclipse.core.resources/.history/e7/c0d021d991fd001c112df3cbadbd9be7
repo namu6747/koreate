@@ -1,0 +1,17 @@
+package service;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import beans.MemberVO;
+
+public class ManagementServiceImpl implements ManagementService {
+
+	@Override
+	public ArrayList<MemberVO> getMemberList(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

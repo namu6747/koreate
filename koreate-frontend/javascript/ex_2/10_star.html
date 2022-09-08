@@ -1,0 +1,77 @@
+<!-- 4/6 10_star.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+    // 111111111111111111111
+        let input = prompt("라인 갯수를 입력해주세요.");
+        for(let i=1; i<=input; i++){
+            for(let j=input; j>i; j--){
+                document.write("&nbsp;");
+            }
+            for(let k=1; k<=i*2-1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+
+        }
+
+        for(let i=input-1; i>0; i--){
+            for(let j = input-i; j>0; j--){
+                document.write("&nbsp;");
+            }
+            for(let k = 0; k<i*2-1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    // 22222222222222222222222
+        let max = input * 2 - 1;
+        for(let i=1; i<=max; i++){
+            if(i<=input){
+                for(let j=input-i; j>0; j--){
+                    document.write("&nbsp");
+                }
+                for(let k=i*2-1; k>0; k--){
+                    document.write("*");
+
+                }
+            }else{
+                for(let j=0; j<i-input; j++){
+                    document.write("&nbsp;");
+                }
+                for(let k=(max-i)*2+1;k>0;k--){
+                    document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+
+    document.write("<hr>");
+    // 33333333333333333
+        for(let i=1, count=0; i<=max; i++){
+            if(i<=input){
+                ++count;
+            }else{
+                --count;
+            }
+            for(let j=1; j<=input-count; j++){
+                document.write("&nbsp;");
+            }
+
+            // 곱하기를 이용해서 count 하나로 별과 공백을 해결했다.
+            for(let k=1; k<=count*2-1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

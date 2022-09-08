@@ -1,0 +1,27 @@
+package utils;
+
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+
+public class GoogleAuthentication extends Authenticator{
+	
+	PasswordAuthentication passwordAuthentication;
+	
+	public GoogleAuthentication() {
+		Properties prop = new Properties();	
+	}
+
+	public PasswordAuthentication getPasswordAuthentication() {
+		return passwordAuthentication;
+	}
+
+}
+
+
+
+
+
+
+
+
+

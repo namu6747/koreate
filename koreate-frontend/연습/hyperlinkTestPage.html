@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    <title>Hyperlink test page</title>
+    <style>
+        * {
+            color: black;
+        }
+
+        article {
+            background-image: url("/src/back_image_white_flower.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        #footFlower {
+            color: blueviolet;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin-top: 10px;
+            padding-top: 5px;
+            padding-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        img,
+        ul,
+        ol,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        fieldset,
+        table,
+        q {
+            text-align: left;
+        }
+
+        address {
+            font-style: normal;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <a href="http://www.naver.com" target="_blank">
+            <img src="src/naverLogo.png" />
+        </a>
+
+        <a href="http://www.google.com" target="_blank">
+            <img src="src/googleLogo.png" />
+        </a>
+        <br /<br />
+        <a href="http://www.youtube.com" target="_blank">
+            <img src="https://i.ytimg.com/vi/ZpwcK74NApM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBl8JFNhdEOfz1K7yQj5xlQMdWY5g"
+                alt="None" width="400" />
+        </a>
+        <br />
+        <a href="#footFlower">Go to bottom</a>
+
+        <br />
+        <hr />
+        <article>
+            <h2 id="alpha">Alpha♥</h2>
+            <li>
+                <p><strong><ins>Lorem ipsum</ins> <mark>dolor sit</mark> amet, consectetur adipiscing elit.</strong></p>
+            </li>
+            <br />
+            <h2 id="beta"><em>Beta</em></h2>
+            <li>
+                <p><del>Vivamus elementum</del> <q>pretium tortor</q>,
+                <blockquote>in tincidunt</blockquote> mauris gravida et.</p>
+            </li>
+            <br />
+            <h2 id="gamma">Gamma</h2>
+            <li>
+                <p>Phasellus <sup>sem tortor</sup>, <sub>volutpat</sub> vitae euismod eget, sagittis sed</p>
+            </li>
+            <br />
+
+            <P><abbr title="Catch Mind">CM</abbr /></P>
+            <br />
+            <a href="https://map.naver.com/v5/?c=14367919.4689987,4192136.8855679,16,0,0,2,dh">
+                <address><strong>부산시 동래구 온천동</strong></address>
+            </a>
+        </article>
+        <br />
+
+        <hr /><br />
+
+        <fieldset>
+            <legend>Login</legend>
+            +Username <input type="text" name="username"><br />
+            +Password <input type="password" name="password">
+            <input type="button" value="Go" onclick="alert('Hello')" />
+        </fieldset>
+
+        <br />
+        <hr /><br />
+
+        <table border="2">
+            <thead>
+                <tr>
+                    <td><img src="src/flower.png" width="15px" height="15px" valign="middle" /></td>
+                    <th>가</th>
+                    <th>나</th>
+                    <th>다</th>
+                    <th>라</th>
+                    <th>마</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>바</b></td>
+                    <td>사</td>
+                    <td>아</td>
+                    <td>자</td>
+                    <td>차</td>
+                    <td>카</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="footFlower">Hello</h3>
+        <br />
+        <hr /><br />
+        <footer>
+            <address>부산광역시 동래구 온천동 1423-7 영남빌딩 9층 902호</address>
+        </footer>
+    </ul>
+</body>
+
+</html>

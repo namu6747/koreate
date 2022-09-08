@@ -1,0 +1,42 @@
+package dao;
+
+import java.util.ArrayList;
+
+import util.PageMaker;
+import vo.NoticeVO;
+
+public interface NoticeDAO {
+	
+	// 게시물 등록
+	public boolean noticeWrite(NoticeVO noticeVO);
+	
+	// 전체 게시물의 개수
+	public int getListCount();
+	
+	// 게시물 목록
+	public ArrayList<NoticeVO> noticeList(int startRow, int endRow);
+	
+	// 게시물 상세보기
+	public NoticeVO noticeDetail(int notice_num);
+	
+	// 게시물 수정
+	public boolean noticeUpdate(NoticeVO noticeVO);
+	
+	// 게시물 삭제
+	public boolean noticeDelete(int notice_num);
+
+	// 검색 리스트 게시물의 개수
+	public int getSearchListCount(String searchName, String searchValue);
+
+	// 검색 게시물 리스트 
+	public ArrayList<NoticeVO> getSearchList(PageMaker pageMaker);
+
+}
+
+
+
+
+
+
+
+

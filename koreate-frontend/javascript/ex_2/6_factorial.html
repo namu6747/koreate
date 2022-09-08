@@ -1,0 +1,23 @@
+<!-- 4/6 6_factorial.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        // factorial  서로 다른 사물 n개를 순서대로 나열할 때의 경우의 수
+        let input = prompt("결과를 원하는 정수를 입력하세요.");
+        let fac =  1;
+        for(let i=input;i>0;i--){
+            fac*=i;
+            console.log(`i : ${i} fac : ${fac}`);
+        }
+        document.write(input+"!의 값은 : "+fac);
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

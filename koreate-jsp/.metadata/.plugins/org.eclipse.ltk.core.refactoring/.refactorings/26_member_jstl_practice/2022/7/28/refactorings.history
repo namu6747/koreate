@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;22_final_mvc/src/main/java/utils&apos;&#x0D;&#x0A;- Original project: &apos;26_member_jstl_practice&apos;&#x0D;&#x0A;- Destination element: &apos;22_final_mvc/src/main/java/utils&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     util.DBCPUtil.java&#x0D;&#x0A;     util.Criteria.java&#x0D;&#x0A;     util.PageMaker.java" description="Copy compilation units" destination="=22_final_mvc/src\/main\/java&lt;utils" element1="/src\/main\/java&lt;util{DBCPUtil.java" element2="/src\/main\/java&lt;util{Criteria.java" element3="/src\/main\/java&lt;util{PageMaker.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1657005968991" units="3" version="1.0"/>
+</session>

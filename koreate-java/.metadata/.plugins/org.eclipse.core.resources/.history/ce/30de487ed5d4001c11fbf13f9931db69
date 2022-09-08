@@ -1,0 +1,12 @@
+class Member{
+	private String id;
+}
+
+public class Test1_2 {
+
+	public static void main(String[] args) {
+		Member choi = new Member();
+		
+	}
+
+}

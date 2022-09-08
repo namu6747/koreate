@@ -1,0 +1,14 @@
+package beans;
+
+public class MemberVO {
+	
+	private int num;	// 회원번호
+	private String id;	// 아이디 : email형식
+	private String pass;// 비밀번호
+	private String name;// 이름
+	private int age;	// 나이
+	private String gender;	// 회원탈퇴 여부
+	
+	
+	
+}

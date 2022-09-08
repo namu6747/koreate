@@ -1,0 +1,90 @@
+package mysql.a_base;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.Scanner;
+
+public class StudentExample {
+
+	public static void main(String[] args) {
+		// 사용자에게 학생이름, 학과, 학년 정보를 입력받아
+		// Statement 객체를 이용하여 student table에
+		// 학생에 정보를 저장하는 코드를 작성
+
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String fullUrl = "jdbc:mysql://localhost:3306/bigdata?user=bigdata&password=12345";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		Scanner sc = new Scanner(System.in);
+		int stuNo;
+		String stuName;
+		String stuDept;
+		int stuGrade;
+		char stuClass;
+		char stuGender;
+		Date stuDate;
+		
+		
+		try {
+			Class.forName(driver);
+			System.out.println("드라이버 클래스 커넥티드");
+			conn = DriverManager.getConnection(fullUrl);
+			System.out.println(conn);
+			System.out.println(" 이름 입력");
+			stuName = sc.nextLine();
+			System.out.println(" 부서 입력");
+			stuDept = sc.nextLine();
+			System.out.println(" 학년 입력");
+			stuGrade = sc.nextInt();sc.nextLine();
+
+			String sql = "INSERT INTO student(stuName,stuDept,stuGrade)" + " VALUES('" + stuName + "','" + stuDept
+					+ "','" + stuGrade + "')";
+			stmt = conn.createStatement();
+			int result = stmt.executeUpdate(sql);
+			System.out.println(result + "개의 행이 삽입되었습니다.\n");
+
+			System.out.println("검색할 학생의 이름를 입력하세요.");
+			String searchName = sc.nextLine();
+			sql = "SELECT * FROM student WHERE stuName = '" + searchName + "'";
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				stuNo = rs.getInt("stuNo");
+				stuName = rs.getString("stuName");
+				stuDept = rs.getString("stuDept");
+				stuGrade = rs.getInt("stuGrade");
+				stuClass = rs.getString("stuClass").charAt(0);
+				stuGender = rs.getString("stuGender").charAt(0);
+				stuDate = rs.getTimestamp("stuDate");
+				System.out.println(rs.next()+
+						stuName + "-" + stuDept + "-" + stuGrade + "-" + stuClass + "-" + stuGender + "-" + stuDate);
+//			} if(rs.next() == ) {
+//				System.out.println(searchName + "번 학생정보가 존재하지 않습니다.");
+//			}
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("클래스 로드 실패");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("DB 연결 실패");
+		} finally {
+			try {
+				if (rs != null)rs.close();
+				if (stmt != null)stmt.close();
+				if (conn != null)conn.close();
+			} catch (SQLException e) {
+
+			}
+		}
+
+	}
+
+}

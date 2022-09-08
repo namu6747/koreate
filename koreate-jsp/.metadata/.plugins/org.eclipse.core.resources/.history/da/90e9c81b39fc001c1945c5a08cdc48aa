@@ -1,0 +1,6 @@
+package repositories;
+// DataBase Access Object
+public interface MemberDAO {
+	// 회원가입
+	boolean memberJoin(MemberVO member);
+}

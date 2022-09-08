@@ -1,0 +1,22 @@
+div#img{
+    width: 100px;
+    height: 140px;
+    background-image: url(../img/back.png);
+    background-repeat: no-repeat;
+    background-size: 100px 140px;
+    background-size: 100% 100%;
+    background-size: 90% 90%;
+    background-position: center;
+    /* auto : 원래 배경 이미지 크기(기본값)
+        contain : 지정한 요소 안에 배경이미지가 다 들어오도록 확대/축소 = 100% 100%
+        cover : 지정 요소들 다 덮도록 배경이미지 확대/축소 */
+    background-size: contain;
+    /* background-size: cover; */
+}
+
+div#img:hover{
+    background-image: url(../img/spade.png);
+    background-size: contain;
+    background-position: center;
+}
+/* div 크기에 맞춰서 배경화면을 지정했음 */

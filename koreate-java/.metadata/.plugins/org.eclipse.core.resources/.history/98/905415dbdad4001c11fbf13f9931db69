@@ -1,0 +1,8 @@
+
+public class Test1_3 {
+
+	public static void main(String[] args) {
+		InputStream is = new FileInputStream("");
+	}
+
+}

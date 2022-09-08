@@ -1,0 +1,341 @@
+package repositories;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import util.Criteria;
+import util.DBCPUtil;
+import util.SearchCriteria;
+import vo.NoticeVO;
+
+public class NoticeDAOImpl implements NoticeDAO{
+	
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+
+	@Override
+	public boolean noticeWrite(NoticeVO vo) {
+		boolean isSuccess = false;
+		conn = DBCPUtil.getConnection();
+		String sql = "INSERT INTO notice_board VALUES(null,?,?,?,?,now())";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getNotice_category());
+			pstmt.setString(2, vo.getNotice_author());
+			pstmt.setString(3, vo.getNotice_title());
+			pstmt.setString(4, vo.getNotice_content());
+			if(pstmt.executeUpdate() != 0) {
+				isSuccess = true;
+			}
+		} catch (SQLException e) {
+			isSuccess = false;
+		} finally {
+			DBCPUtil.close(pstmt,conn);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public ArrayList<NoticeVO> noticeList(int startRow, int count) {
+		ArrayList<NoticeVO> list = new ArrayList<>();
+		
+		conn = DBCPUtil.getConnection();
+		String sql = "SELECT * FROM notice_board "
+				   + " ORDER BY notice_num DESC "
+				   + " limit ?, ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, count);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				NoticeVO n = new NoticeVO(
+								rs.getInt(1),
+								rs.getString(2),
+								rs.getString(3),
+								rs.getString(4),
+								rs.getString(5),
+								rs.getTimestamp(6)						
+							);
+				list.add(n);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return list;
+	}
+
+	@Override
+	public int getTotalCount() {
+		conn = DBCPUtil.getConnection();
+		int listCount = 0;
+		String sql = "SELECT count(*) FROM notice_board";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return listCount;
+	}
+
+	@Override
+	public NoticeVO noticeDetail(int notice_num) {
+		NoticeVO notice = null;
+		conn = DBCPUtil.getConnection();
+		String sql = "SELECT * FROM notice_board WHERE notice_num=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, notice_num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				notice = new NoticeVO(
+							rs.getInt(1),
+							rs.getString(2),
+							rs.getString(3),
+							rs.getString(4),
+							rs.getString(5),
+							rs.getTimestamp(6)
+						);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return notice;
+	}
+
+	@Override
+	public boolean noticeUpdate(NoticeVO vo) {
+		boolean isSuccess = false;
+		String sql = " UPDATE notice_board SET "
+					+ " notice_category = ? ,"
+					+ " notice_author = ? ,"
+					+ " notice_title = ? ,"
+					+ " notice_content = ? , "
+					+ " notice_date = now() "
+					+ " WHERE notice_num = ? ";
+		conn = DBCPUtil.getConnection();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getNotice_category());
+			pstmt.setString(2, vo.getNotice_author());
+			pstmt.setString(3, vo.getNotice_title());
+			pstmt.setString(4, vo.getNotice_content());
+			pstmt.setInt(5, vo.getNotice_num());
+			
+			if(pstmt.executeUpdate() > 0) {
+				isSuccess = true;
+			}
+		} catch (SQLException e) {
+			isSuccess = false;
+		} finally {
+			DBCPUtil.close(pstmt,conn);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public boolean noticeDelete(int notice_num) {
+		boolean isSuccess = false;
+		conn = DBCPUtil.getConnection();
+		String sql = "DELETE FROM notice_board WHERE notice_num = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, notice_num);
+			if(pstmt.executeUpdate() > 0) {
+				isSuccess = true;
+			}
+		} catch (SQLException e) {
+			isSuccess = false;
+		} finally {
+			DBCPUtil.close(pstmt,conn);
+		}
+		return isSuccess;
+	}
+
+	// 카테고리 검색 기능 추가
+	@Override
+	public List<NoticeVO> getNoticeCategoryList(Criteria cri, String category) {
+		List<NoticeVO> list = new ArrayList<>();
+		String sql = "SELECT * FROM notice_board WHERE notice_category = ? "
+					+" ORDER BY notice_num DESC limit ?, ?";
+		try {
+			conn = DBCPUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, category);
+			pstmt.setInt(2, cri.getStartRow());
+			pstmt.setInt(3, cri.getPerPageNum());
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				NoticeVO n = new NoticeVO(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getString(5),
+						rs.getTimestamp(6)						
+					);
+				list.add(n);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return list;
+	}
+
+	// 카테고리 검색 기능 추가
+	@Override
+	public int noticeCategoryTotalCount(String category) {
+		String sql = "SELECT count(*) FROM notice_board WHERE notice_category = ?";
+		int totalCount = 0;
+		try {
+			conn = DBCPUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, category);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				totalCount = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return totalCount;
+	}
+
+	// 검색 기능 추가
+	@Override
+	public List<NoticeVO> getNoticeSearchList(SearchCriteria cri) {
+		ArrayList<NoticeVO> noticeList = new ArrayList<>();
+		System.out.println("perPageNum : " + cri.getPerPageNum());
+		System.out.println("startRow  : " + cri.getStartRow());
+		conn = DBCPUtil.getConnection();
+		
+		if(cri != null && cri.getSearchName() == null) cri.setSearchValue("");
+		
+		System.out.println(cri);
+		
+		try {
+			boolean isSearchQuery = true;
+			String sql  ="SELECT * FROM notice_board ";
+			System.out.println(cri.getSearchName());
+			
+			if(cri.getSearchName() == null || cri.getSearchName().trim().equals("") || cri.getSearchName().equals("null")) {
+				System.out.println("검색 내용 없음.");
+				isSearchQuery = false;	
+			}else {
+				if(cri.getSearchName().equals("content")){
+					sql+=" WHERE notice_content LIKE ? ";
+				}else if(cri.getSearchName().equals("title")){
+					sql+=" WHERE notice_title LIKE ? ";
+				}else {
+					sql+=" WHERE (notice_title LIKE ?) OR (notice_content LIKE '"+cri.getSearchValue()+"')";
+				}
+			}
+			sql+= " ORDER BY notice_num DESC limit ? , ?";
+			System.out.println("getSearchNoticeList : " + sql +" : "+ isSearchQuery);
+			pstmt = conn.prepareStatement(sql);
+			if(isSearchQuery) {
+				// pstmt.setString(1, "%"+cri.getSearchValue().replaceAll(" ","_")+"%");
+				pstmt.setString(1, "%"+cri.getSearchValue()+"%");
+				pstmt.setInt(2, cri.getStartRow());
+				pstmt.setInt(3, cri.getPerPageNum());
+			}else {
+				pstmt.setInt(1, cri.getStartRow());
+				pstmt.setInt(2, cri.getPerPageNum());
+			}
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				NoticeVO n = new NoticeVO();
+				n.setNotice_num(rs.getInt("notice_num"));
+				n.setNotice_category(rs.getString("notice_category"));
+				n.setNotice_author(rs.getString("notice_author"));
+				n.setNotice_title(rs.getString("notice_title"));
+				n.setNotice_content(rs.getString("notice_content"));
+				n.setNotice_date(rs.getTimestamp("notice_date"));
+				noticeList.add(n);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs);
+			DBCPUtil.close(pstmt);
+			DBCPUtil.close(conn);
+		}
+		return noticeList;
+	}
+
+	// 검색 기능 추가
+	@Override
+	public int noticeSearchTotalCount(SearchCriteria cri) {
+		int listCount = 0;
+		try {
+			conn = DBCPUtil.getConnection();
+			
+			String sql = "SELECT count(*) FROM notice_board ";
+			String searchName = cri.getSearchName();
+			String searchValue = cri.getSearchValue();
+			System.out.println(cri.getSearchValue());
+			
+			if(searchValue == null) searchValue="";
+			System.out.println("getSearchListCount : " + searchValue);
+			if(searchName == null || searchName.trim().equals("") || searchName.trim().equals("null")){
+				System.out.println("listCount 검색 내용이없음");
+				pstmt = conn.prepareStatement(sql);
+			}else {
+				if(searchName.equals("title")){
+					sql += " WHERE notice_title LIKE CONCAT('%',?,'%') ";
+					pstmt = conn.prepareStatement(sql);
+					// pstmt.setString(1, searchValue.replaceAll(" ","_"));
+					pstmt.setString(1, searchValue);
+				}else if(searchName.equals("content")){
+					sql += " WHERE notice_content LIKE CONCAT('%',?,'%') ";
+					pstmt = conn.prepareStatement(sql);
+					// pstmt.setString(1, searchValue.replaceAll(" ","_"));
+					pstmt.setString(1, searchValue);
+				}else {
+					sql += " WHERE (notice_title LIKE CONCAT('%',?,'%')) OR (notice_content LIKE CONCAT('%',?,'%'))";
+					pstmt = conn.prepareStatement(sql);
+//					pstmt.setString(1, searchValue.replaceAll(" ","_"));
+//					pstmt.setString(2, searchValue.replaceAll(" ","_"));
+					pstmt.setString(1, searchValue);
+					pstmt.setString(2, searchValue);
+				}
+
+			}
+			System.out.println("search sql : " +sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) listCount = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBCPUtil.close(rs,pstmt,conn);
+		}
+		return listCount;
+	}
+}
+
+
+
+

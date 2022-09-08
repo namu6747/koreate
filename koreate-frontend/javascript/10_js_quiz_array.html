@@ -1,0 +1,45 @@
+<!-- 4/7 10_js_quiz_array.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        let englishScores = [];
+        // == englishScores = new Array();
+        let max,min;
+        // const 는 대문자로 표현하며 단어 구분은 under bar
+        const STUDENT_NUM  = 5;
+
+        
+        
+        for(let i = 0; i<STUDENT_NUM; i++){
+            let score = prompt(i+1+"번째 학생의 영어 점수를 입력해주세요.");
+            englishScores[i] = parseInt(score);
+            
+        }
+        
+        console.log(englishScores);
+        max=min=englishScores[0];
+
+        for(i = 1; i<englishScores.length; i++){
+            if(englishScores[i] > max){
+                max=englishScores[i]
+            }
+        }
+        for(i = 1; i<englishScores.length; i++){
+            if(englishScores[i] < min){
+                max=englishScores[i]
+            }
+        }
+
+        console.log(max,min);
+
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

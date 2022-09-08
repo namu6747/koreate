@@ -1,0 +1,21 @@
+package repositories;
+
+import beans.MemberVO;
+
+// DataBase Access Object
+public interface MemberDAO {
+	// 회원가입
+	boolean memberJoin(MemberVO member);
+	// 로그인 처리
+	
+}
+
+
+
+
+
+
+
+
+
+

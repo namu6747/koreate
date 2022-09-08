@@ -1,0 +1,23 @@
+package service;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import beans.MemberVO;
+
+public interface ManagementService {
+	
+	// 페이징 처리된 회원 목록
+	ArrayList<MemberVO> getMemberList(HttpServletRequest request);
+	
+	// 관리자 확인
+	
+	
+}
+
+
+
+
+
+

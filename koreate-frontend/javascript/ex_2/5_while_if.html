@@ -1,0 +1,43 @@
+<!-- 4/6 5_while_if.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        let isRun = true;
+        let guess = 78;
+
+        // parseInt:괄호 안의 숫자로 표현된 data를 정수로 인식시켜줌
+        // Math.random:0부터 시작하여 1에 수렴하는 모든 수를 제공함
+        guess = parseInt(Math.random()*100)+1;
+        console.log(guess);
+        let result = "";
+        let count = 0;
+
+        // do:조건 무관 최소 한 번의 실행 보장
+        do{
+            let input = prompt("1~100까지의 정수를 입력해주세요.");
+            if(input == "" || input == null || isNaN(input)){
+                alert("1~100까지만");
+                continue;
+            }
+            if(input == guess){
+                result = "성공입니다.";
+                isRun = false;
+            }else if(input < guess){
+                result = "낮습니다.";
+            }else{
+                result = "높습니다.";
+            }
+            count++;
+            alert(result+"추측횟수 : "+count)
+        }while(isRun);
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

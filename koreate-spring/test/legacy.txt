@@ -1,0 +1,118 @@
+정보: 서버 버전 이름:    Apache Tomcat/9.0.64
+정보: Server 빌드 시각:  Jun 2 2022 19:08:46 UTC
+정보: Server 버전 번호:  9.0.64.0
+정보: 운영체제 이름:     Windows 10
+정보: 운영체제 버전:     10.0
+정보: 아키텍처:          amd64
+정보: 자바 홈:           C:\Program Files\Java\jdk1.8.0_321\jre
+정보: JVM 버전:          1.8.0_321-b07
+정보: JVM 벤더:          Oracle Corporation
+정보: CATALINA_BASE:     C:\Users\82105\Desktop\workspace\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+정보: CATALINA_HOME:     C:\Users\82105\apache-tomcat-9.0.64
+정보: 명령 행 아규먼트:  -Dcatalina.base=C:\Users\82105\Desktop\workspace\spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp1
+정보: 명령 행 아규먼트:  -Dcatalina.home=C:\Users\82105\apache-tomcat-9.0.64
+정보: 명령 행 아규먼트:  -Dwtp.deploy=C:\Users\82105\Desktop\workspace\spring
+정보: 명령 행 아규먼트:  -Djava.endorsed.dirs=C:\Users\82105\apache-tomcat-9.0.64\endorsed
+정보: 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+정보: APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.33]을(를) 로드했습니다.
+정보: APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+정보: APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+정보: OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1o  3 May 2022]
+정보: 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+정보: [1048] 밀리초 내에 서버가 초기화되었습니다.
+정보: 서비스 [Catalina]을(를) 시작합니다.
+정보: 서버 엔진을 시작합니다: [Apache Tomcat/9.0.64]
+경고: [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [116] 밀리초가 소요됐습니다.
+정보: 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+7월 28, 2022 5:49:11 오후 org.apache.catalina.core.ApplicationContext log
+정보: No Spring WebApplicationInitializer types detected on classpath
+*이니셜라이저를 찾지 못했다? 먼저 인식 되는 건가? 어노테이션을 말하는 건가?*
+
+7월 28, 2022 5:49:11 오후 org.apache.catalina.core.ApplicationContext log
+정보: Initializing Spring root WebApplicationContext
+*contextConfigLocation에 등록된 걸 찾았나?*
+*ApplicationContext를 초기화 시작한다*
+
+INFO - Root WebApplicationContext: initialization started
+DEBUG - Refreshing Root WebApplicationContext
+DEBUG - Loaded 5 bean definitions from class path resource [spring/root-context.xml]
+*5개의 빈을 root-context 에서 찾은 것 같다*
+DEBUG - Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer#0'
+*마이바티스 매퍼 설정 객체*
+
+
+DEBUG - Identified candidate component class: file [C:\Users\82105\Desktop\workspace\spring\mvc_part12_AOP_transaction\target\classes\net\koreate\dao\MessageDAO.class]
+DEBUG - Identified candidate component class: file [C:\Users\82105\Desktop\workspace\spring\mvc_part12_AOP_transaction\target\classes\net\koreate\dao\UserDAO.class]
+*컴포넌트 클래스가 될 수 있는 클래스들을 찾았다*
+DEBUG - Creating MapperFactoryBean with name 'messageDAO' and 'net.koreate.dao.MessageDAO' mapperInterface
+DEBUG - Enabling autowire by type for MapperFactoryBean with name 'messageDAO'.
+*autowired 가능하도록 설정?*
+DEBUG - Creating MapperFactoryBean with name 'userDAO' and 'net.koreate.dao.UserDAO' mapperInterface
+DEBUG - Enabling autowire by type for MapperFactoryBean with name 'userDAO'.
+DEBUG - Creating shared instance of singleton bean 'hikariConfig'
+DEBUG - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader ParallelWebappClassLoader
+
+DEBUG - Creating shared instance of singleton bean 'org.mybatis.spring.SqlSessionFactoryBean#0'
+DEBUG - Property 'configuration' or 'configLocation' not specified, using default MyBatis Configuration
+DEBUG - Property 'mapperLocations' was not specified.
+DEBUG - Creating shared instance of singleton bean 'messageDAO'
+DEBUG - Creating shared instance of singleton bean 'userDAO'
+
+INFO - Root WebApplicationContext initialized in 4583 ms
+*root-context.xml 초기화 완료*
+
+<hr/>
+*web.xml에 등록된 appServlet 초기화 시작*
+정보: Initializing Spring DispatcherServlet 'appServlet'
+INFO - Initializing Servlet 'appServlet'
+DEBUG - Refreshing WebApplicationContext for namespace 'appServlet-servlet'
+DEBUG - Identified candidate component class: file [C:\Users\82105\Desktop\workspace\spring\mvc_part12_AOP_transaction\target\classes\net\koreate\controller\HomeController.class]
+DEBUG - Identified candidate component class: file [C:\Users\82105\Desktop\workspace\spring\mvc_part12_AOP_transaction\target\classes\net\koreate\controller\MessageController.class]
+DEBUG - Identified candidate component class: file [C:\Users\82105\Desktop\workspace\spring\mvc_part12_AOP_transaction\target\classes\net\koreate\service\MessageService.class]
+*지정한 경로에 있는 클래스 중 컴포넌트들만 찾은 것 같다*
+DEBUG - Loaded 34 bean definitions from class path resource [spring/appServlet/servlet-context.xml]
+*servlet-context.xml 인식*
+
+DEBUG - Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+*HTTP 헤더 중 Accept와 관련된 처리를 하는 빈????*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+*핸들러를 매핑하는 빈*
+
+
+DEBUG - Creating shared instance of singleton bean 'org.springframework.format.support.FormattingConversionServiceFactoryBean#0'
+*타입 컨버터와 관련된 빈*
+
+DEBUG - 
+	n.k.c.HomeController:
+	{GET [/]}: home(Locale,Model)
+DEBUG - 
+	n.k.c.MessageController:
+	{GET [/messages/list]}: list()
+	{PATCH [/messages/read/{mno} || /messages/read/{mno}/{uid}]}: readMessage(UserVO,int,String)
+	{POST [/messages/add]}: addMessage(MessageVO)
+*컨트롤러에 등록된 핸들러들을 인식함*
+DEBUG - 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+*RequestMappingHandlerMapping이 4가지의 "메소드"를 매핑한 것을 알 수 있다*
+*여기서 말하는 핸들러는 메소드를 칭하는 거구나*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter'
+*어댑터(컨트롤러) 매핑 객체는 이제서야 만들어졌다*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0'
+*@ExceptionHandler를 처리하는 객체가 제공된다*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0'
+*@ResponseStatus를 처리하는 객체가 제공된다*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0'
+*얘도 제공한다*
+
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0'
+DEBUG - 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0' {/resources/**=ResourceHttpRequestHandler [ServletContext [/resources/]]}
+*정적 리소스에 대한 URI는 뺏어갔다*
+DEBUG - Creating shared instance of singleton bean 'org.springframework.web.servlet.view.InternalResourceViewResolver#0'
+*뷰 리졸버가 등록됐다*
+DEBUG - Creating shared instance of singleton bean 'homeController'
+DEBUG - Creating shared instance of singleton bean 'messageController'
+DEBUG - Creating shared instance of singleton bean 'messageService'
+*식별된 컴포넌트들이 이제서야 빈으로 등록 됐다*
+DEBUG - Autowiring by type from bean name 'messageService' via constructor to bean named 'userDAO'
+DEBUG - Autowiring by type from bean name 'messageService' via constructor to bean named 'messageDAO'
+DEBUG - Autowiring by type from bean name 'messageController' via constructor to bean named 'messageService'
+*오토와이어*

@@ -1,0 +1,90 @@
+<!-- 4/4 03_js_operator.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style></style>
+    <script>
+        // numeric operators
+        console.log("2" + "3"); // add
+        console.log(2 - 3); // substract
+        console.log(2 / 3); // divide
+        console.log(2 * 3); // multifly
+        console.log(2 % 3); // rest
+        console.log(2 ** 3); // exponentition
+        console.log(2 / 0); //  infinity
+
+        let str = 'my' + 'Study';
+        console.log(str);
+
+        let number = 2;
+        let number2 = 3;
+        let result = number + number2;
+        console.log("결과값은 : " + result);
+
+        str = `template string : ${result}s`;
+        console.log(str);
+        str = 'template string : ' + result + 's';
+        console.log(str);
+        str = `template string : ` + result + `s`;
+        console.log(str);
+        str = "\"template\" \nstring";
+        console.log(str);
+        
+        console.log("--------------------------");
+        // 비교연산자 좌변과 우변의 값의  크기를 비교
+        // 우변이 크면 참
+        result = number < number2;
+        // 좌변이 크면 참
+        result = number > number2;
+        // 좌변이 우변보다 작거나 같으면 참
+        result = number <= number2;
+        // 좌변이 우변보다 크거나 같으면 참
+        result = number >= number2;
+
+        // 동등 비교 연산자
+        // !=, ==, ===, !==
+        const strAge = '40';
+        const numAge = 40;
+        // typeof(변수) 변수의 데이터 타입을 출력
+        console.log(typeof(strAge));
+        console.log(typeof(numAge));
+        result = strAge == numAge;
+        console.log(result);
+        // === type 까지 비교함
+        result = strAge === numAge;
+        console.log(result);
+
+        // 논리 비교 연산자
+        // ! not.  || or, && and
+        let value1 = false;
+        const value2 = 4 < 2;
+        result = value1 || value2;
+        console.log(result);
+        result = !value1 && value2;
+        console.log(result);
+        result = !value1 && !value2;
+        console.log(result);
+
+        // 베타 연산자
+        // 두 논리가 일치하지 않을 때만 참
+        result = value1 ^ !value2;
+        console.log(result);
+        result =  value1 != value2;
+        console.log(result);
+
+        // 복합 대입 연산자 결과를 연쇄적으로 변수에 적용
+        let x = 3;
+        let y = 6;
+        x = x + y;
+        console.log(x);
+        x+=y; // x = x  + y
+        x*=y;
+        console.log(x);
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

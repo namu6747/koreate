@@ -1,0 +1,47 @@
+<!-- 4/1 test_1_nav.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title>navigation</title>
+    <link  rel="stylesheet" href="test_1_nav_float.css">
+    <link  rel="stylesheet" href="test_1_nav_flex.css">
+    <link  rel="stylesheet" href="test_1_nav_table.css">
+</head>
+    
+<body>
+    <!-- nav>ul.normal>(li>{메뉴-$})*4 -->
+    <nav>
+        <ul class="normal">
+            <li>메뉴-1</li>
+            <li>메뉴-2</li>
+            <li>메뉴-3</li>
+            <li>메뉴-4</li>
+        </ul>
+    </nav>
+    <br style="clear:both"><hr>
+
+    <!-- nav>ul.flex>(li>a{menu-$})*4 -->
+    <nav>
+        <ul class="flex">
+            <li><a href="">menu-1</a></li>
+            <li><a href="">menu-2</a></li>
+            <li><a href="">menu-3</a></li>
+            <li><a href="">menu-4</a></li>
+        </ul>
+    </nav>
+
+    <br><hr><br>
+    <!-- nav>table>tr>(td>a{MENU-$})*4 -->
+    <nav>
+        <table>
+            <tr>
+                <td><a href="">MENU-1</a></td>
+                <td><a href="">MENU-2</a></td>
+                <td><a href="">MENU-3</a></td>
+                <td><a href="">MENU-4</a></td>
+            </tr>
+        </table>
+    </nav>
+</body>
+</html>

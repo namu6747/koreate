@@ -1,0 +1,22 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="d.contructor.Car"><rhs name\="d.contructor.Car"/></lhs><lhs name\="g.object_array.Korean"><rhs name\="g.object_array.Korean"/></lhs><lhs name\="static_test.Calculator"><rhs name\="static_test.Calculator"/></lhs><lhs name\="extends2.phone.Phone"><rhs name\="extends2.phone.DMBPhone"/></lhs><lhs name\="extends2.phone.DMBPhone"><rhs name\="extends2.phone.DMBPhone"/></lhs><lhs name\="extends3.override.Calculator"><rhs name\="extends3.override.Calculator"/></lhs><lhs name\="extends5.polymorphism.customer.Customer"><rhs name\="extends5.polymorphism.customer.VIPCustomer"/></lhs><lhs name\="extends6.abstracts.Car"><rhs name\="extends6.abstracts.ManualCar"/></lhs><lhs name\="a.base.RemoteControl"><rhs name\="a.base.SmartTVRemoteControl"/></lhs><lhs name\="a.base.Searchable"><rhs name\="a.base.SmartTVRemoteControl"/></lhs><lhs name\="b.defaults.Printable"><rhs name\="b.defaults.HPPrinter"/></lhs><lhs name\="e.poly.Connector"><rhs name\="e.poly.MongoDB"/></lhs><lhs name\="generic05_wildcard.Person"><rhs name\="generic05_wildcard.HighStudent"/></lhs><lhs name\="java.lang.Runnable"><rhs name\="t03_state.StatePrintThread"/><rhs name\="t05_control_method.notify_wait.ProduceThread"/><rhs name\="t05_control_method.notify_wait.ConsumerThread"/></lhs><lhs name\="java.lang.Thread"><rhs name\="t03_state.StatePrintThread"/><rhs name\="t05_control_method.notify_wait.ProduceThread"/><rhs name\="t05_control_method.notify_wait.ConsumerThread"/></lhs><lhs name\="java.lang.Enum"><rhs name\="java.lang.Thread$State"/></lhs></history>
+content_assist_number_of_computers=14
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.exception.name=e
+org.eclipse.jdt.ui.formatterprofiles.version=22
+org.eclipse.jdt.ui.gettersetter.use.is=true
+org.eclipse.jdt.ui.ignorelowercasenames=true
+org.eclipse.jdt.ui.importorder=java;javax;org;com;
+org.eclipse.jdt.ui.ondemandthreshold=99
+org.eclipse.jdt.ui.overrideannotation=true
+org.eclipse.jdt.ui.staticondemandthreshold=99
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="methodbody_context" deleted\="false" description\="Code in created method stubs" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.methodbody" name\="methodbody">${body_statement}</template></templates>
+org.eclipse.jdt.ui.typefilter.disabled=java.awt.*;java.rmi.*;org.graalvm.*
+org.eclipse.jdt.ui.typefilter.enabled=com.sun.*;io.micrometer.shaded.*;jdk.*;sun.*;java.awt.List
+org.eclipse.jdt.ui.visibility.order=B,V,R,D,
+outlinesortoption=T,SF,SI,SM,F,I,C,M,
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

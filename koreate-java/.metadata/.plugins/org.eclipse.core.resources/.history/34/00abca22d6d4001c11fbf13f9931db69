@@ -1,0 +1,37 @@
+class Member{
+	private String id;
+	private String password;
+	private String name;
+	
+	public void setId(String string) {
+		this.id = string;
+	}
+	public void setPassword(String string) {
+		this.password = string;
+	}
+	public void setName(String string) {
+		this.name = string;
+	}
+	
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", password=" + password + ", name=" + name + "]";
+	}
+	
+}
+
+public class Test1_2 {
+
+	public static void main(String[] args) {
+		Member choi = new Member();
+		choi.setId("id001");
+		choi.setPassword("pw001");
+		choi.setName("최기근");
+		System.out.println(choi);
+		
+		Member park = new Member();
+		park.setId("id001");
+		park.setPassword("pw001");
+	}
+
+}

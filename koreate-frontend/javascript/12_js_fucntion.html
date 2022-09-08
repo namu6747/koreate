@@ -1,0 +1,79 @@
+<!-- 4/7 12_js_fucntion.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        // function: 하나의 특별한 목적을 가진 작업을 수행하기  위해 독립적으로 설계된 코드의 집합
+        // function name: 함수를 호출하기 위해  명시된 식별자
+        // parameters: 함수 호출 시 전달되는 인자(인수)의 값을 저장할 변수들
+        // function block(body): 함수의 고유 기능을 수행하는 명령문의집합
+        // return: 함수가 모든 작업을 수행하고 반환하는 데이터
+
+        print();
+
+    //  declare  name (P){block}
+        function print(){
+            console.log("print 함수 호출");
+        }
+
+        function printName(name){
+            document.write("이름은 "+name+" 입니다.<br>");
+        }
+        
+        // 함수 명이 print인 함수 호출
+        print();
+        printName("가나다");
+
+        function sum(x,y){
+            return x + y;
+            console.log('sum 종료'); // return이 위에 있어 수행되지 않음
+        }
+        let twin = sum(10,30);
+        printName(twin);
+        
+        // 기명 함수(named function)
+        // var 변수 선언의 hoisting 기능은 정의된 함수까지 포함하지 않는다.
+        var nFunction = function test(){
+            alert("test 호출");
+        }
+
+        nFunction(); // test(); 함수 단독으로는 작동되지 않음.
+
+        // 익명 함수(anonymous function)
+        var anonyFunc = function (){
+            alert('익명 함수 호출');
+        }
+        document.write("typeof : "+typeof(anonyFunc));
+            anonyFunc();
+
+
+            function call(callBack){
+                for(let i=0; i<5; i++){
+                    callBack(i);
+                }
+            }
+
+            var func = function(k){
+                console.log("func : "+k);
+            }
+            
+            // func(10);
+            call(func);
+
+            /*
+                func = function(k) = function call(k) = 0 1 2 3 4
+                -> -> -> // <- <- <-
+            */
+            // call(function(x){
+            //     alert(x);
+            // })
+        </script>
+</head>
+    
+<body>
+</body>
+</html>

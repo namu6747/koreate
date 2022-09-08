@@ -1,0 +1,77 @@
+html,
+body {
+        height: 100%;
+}
+
+nav h2,
+article h2 {
+        margin: 0;
+}
+
+h1 {
+        margin: 0;
+        line-height: 2em;
+}
+
+.wrap {
+        margin: auto;
+        width: 1100px;
+        height: 100%;
+        text-align: center;
+}
+
+header {
+        background-color: coral;
+        height: 10%;
+}
+
+nav {
+        background-color: limegreen;
+}
+
+main {
+        background-color: lightgray;
+        height: 75%;
+        vertical-align: middle;
+}
+
+aside {
+        background-color: skyblue;
+        width: 25%;
+}
+
+aside,
+section {
+        float: left;
+        position: relative;
+        height: 100%;
+}
+
+aside nav {
+        position: absolute;
+        width: 90%;
+        left: 5%;
+}
+
+section {
+        background-color: pink;
+        width: 50%;
+}
+
+article {
+        background-color: coral;
+        position: absolute;
+        width: 95%;
+        left: 2.5%;
+        height: 70%;
+}
+
+footer {
+        background-color: coral;
+        height: 7%;
+        clear: both;
+}
+
+footer h1 {
+        line-height: 48px;
+    }

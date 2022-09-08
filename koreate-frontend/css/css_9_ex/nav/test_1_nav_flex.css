@@ -1,0 +1,27 @@
+ul.flex{
+    display: flex;
+    flex-flow: row nowrap;
+    border: 1px solid black;
+}
+ul.flex li{
+    display: flex;
+    flex-grow:1;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-right:1px solid black;
+}
+ul.flex li:last-child{
+    border-right: none;
+}
+ul.flex li a{
+    text-decoration: none;
+    color: white;
+}
+ul.flex li:hover{
+    background-color: white;
+}
+ul.flex li:hover a{
+    color: gray;
+}

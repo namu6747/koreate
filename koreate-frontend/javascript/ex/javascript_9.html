@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+                
+        // input = prompt("가로 길이를 입력하세요");
+        // let k = input * 2 - 1;
+        // let x;
+
+        // for (let h = 1; h <= k; h++) {
+        //     if (h <= input) {
+        //         for (x = 1; x <= h; x++) {
+        //             document.write("*");
+        //         }
+        //     } else if (h > input) {
+        //         for (x = h-input; x <=k-input; x++) {
+        //             document.write("*");
+        //      // h가 4일때 x = 1 이니까 1번 반복....... h가 5일때 x=2니까 2번 반복...   
+        //         }
+        //     }
+        //     document.write("<br>");
+        // }
+
+        
+        let input = prompt("가로 길이를 입력하세요");
+        let x,y;
+        y=0;
+        
+        // let h = (input*2)-1;
+        
+        if(y<=input){
+            for(y=1;y<=input;y++){
+                for(x=1;x<=y;x++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+        console.log(y);
+
+        if(y>input){
+            for(y=--input;y>=1;y--){
+                for(x=1;x<=y;x++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+
+        // if(y>input){
+        //     for(y=++input;y<=h;y++){
+        //         for(x=y;x<=h;x++){
+        //             document.write("*");
+        //         }
+        //         document.write("<br>");
+        //     }
+        // }
+
+        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

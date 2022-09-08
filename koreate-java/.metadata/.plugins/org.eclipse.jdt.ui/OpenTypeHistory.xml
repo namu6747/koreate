@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=11_extends/src&lt;extends4.protectedz.a{A.java[A" modifiers="1" timestamp="1651791159223"/>
+    <typeInfo handle="=12_interface/src&lt;b.defaults{Printable.java[Printable" modifiers="513" timestamp="1651462411032"/>
+    <typeInfo handle="=15_generic/src&lt;generic05_wildcard{Person.java[Person" modifiers="1" timestamp="1651806220839"/>
+    <typeInfo handle="=15_generic/src&lt;generic05_wildcard{Student.java[Student" modifiers="1" timestamp="1651806338895"/>
+    <typeInfo handle="=17_collection_framework/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.util(Comparator.class[Comparator" modifiers="1537" timestamp="1650330116363"/>
+    <typeInfo handle="=19_io_stream/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.io(ObjectOutputStream.class[ObjectOutputStream" modifiers="33" timestamp="1650330116363"/>
+    <typeInfo handle="=22_database_jdbc/src&lt;guide_book.dao{BookDAO.java[BookDAO" modifiers="513" timestamp="1653286449801"/>
+    <typeInfo handle="=24_thread/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Thread.class[Thread" modifiers="33" timestamp="1650330116363"/>
+    <typeInfo handle="=24_thread/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1650330116363"/>
+</typeInfoHistroy>

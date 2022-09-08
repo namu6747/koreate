@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .card{
+            background-image: url(/실습/html_css/0331_img/back.png);
+            background-repeat: no-repeat;
+            background-size: 50%;
+            width: 312px;
+            height: 441px;
+            overflow: hidden;
+            
+        }
+
+        .card:hover{
+            background-image: url(/실습/html_css/0331_img/spade.png);
+            background-size: 50%;
+            width: 312px;
+            height: 441px;
+            overflow: hidden;
+        }
+
+        p, .card{
+            float: left;
+        }
+
+        p{
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>:hover 활용</h1>
+    </header>
+    <hr>
+    <article>
+        <p>마우스를 올리면 카드의 앞면이 보인다.</p>    
+        <div class="card"></div>            
+    </article>
+</body>
+
+</html>

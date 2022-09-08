@@ -1,0 +1,97 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import service.MemberServiceImpl;
+import service.NoticeService;
+import service.NoticeServiceImpl;
+
+@WebServlet("*.do")
+public class NoticeController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	NoticeService ns = new NoticeServiceImpl();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		MemberServiceImpl.loginCheck(request);
+		String command = request.getRequestURI()
+						.substring(request.getContextPath().length()+1);
+		System.out.println("공지 Controller 요청 정보 : " + command);
+		
+		String view = "";
+		
+		boolean isSuccess = false;
+		
+		String suc = "/board/notice/notice_success.jsp";
+		String fail = "/board/notice/notice_fail.jsp";
+		
+		if(command.equals("notice.do")) {
+			// 공지 목록
+			ns.noticeList(request);
+			view = "/board/notice/notice_list.jsp";
+		}
+		
+		if(command.equals("noticeDetail.do")) {
+			// 공지 목록
+			ns.noticeDetail(request);
+			view = "/board/notice/notice_detail.jsp";
+		}
+		
+		if(command.equals("noticeWrite.do")) {
+			if(!ManagementServiceImpl.checkAdmin(request, response))return;
+			view = "/board/notice/notice_write.jsp";
+		}
+		
+		if(command.equals("noticeWriteSubmit.do")) {
+			if(!ManagementServiceImpl.checkAdmin(request, response))return;
+			isSuccess = ns.noticeWrite(request);
+			if(isSuccess) {
+				view = suc;
+			}else {
+				view = fail;
+			}
+		}
+		
+		if(command.equals("noticeUpdate.do")) {
+			if(!ManagementServiceImpl.checkAdmin(request, response))return;
+			ns.noticeDetail(request);
+			view = "/board/notice/notice_update.jsp";
+		}
+		
+		if(command.equals("noticeUpdateSubmit.do")) {
+			if(!ManagementServiceImpl.checkAdmin(request, response))return;
+			isSuccess = ns.noticeUpdate(request);
+			view = isSuccess ? suc : fail;
+		}
+
+		if(command.equals("noticeDelete.do")) {
+			if(!ManagementServiceImpl.checkAdmin(request, response))return;
+			view = ns.noticeDelete(request) ? suc : fail;
+		}
+		
+		if(command.equals("noticeSearch.do")) {
+			ns.search(request);
+			view="/board/notice/notice_list.jsp";
+		}
+		
+		if(view != null && !view.equals("")) {
+			request.getRequestDispatcher(view)
+			.forward(request, response);
+		}else {
+			request.getRequestDispatcher(fail)
+			.forward(request, response);
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,56 @@
+div[class*="ball"]{
+    width: 50px;
+    height: 50px;
+    background-color: skyblue;
+    border: 1px solid black;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 0;
+    animation:bbb 2s normal infinite; 
+}
+
+ /* duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name  */
+
+.jumpBall .ball1 {
+    left: 0;
+}
+
+.jumpBall .ball2 {
+    left: 60px;
+    animation-delay:100ms;
+}
+
+.jumpBall .ball3 {
+    left: 120px;
+    animation-delay:200ms;
+}
+
+.jumpBall .ball4 {
+    left: 180px;
+    animation-delay:300ms;
+}
+
+.jumpBall .ball5 {
+    left: 240px;
+    animation-delay:400ms;
+}
+
+@keyframes bbb{
+    0%{
+      bottom: 0;  
+    }
+    35%{
+        bottom:50%;
+        opacity: 0.3;
+        animation-timing-function: ease-in-out;
+    }
+    70%, 100%{
+        bottom:  0;
+        animation-timing-function: ease-in;
+    }
+    85%{
+        bottom: 10%;
+        animation-timing-function: ease-in-out;
+    }
+} 

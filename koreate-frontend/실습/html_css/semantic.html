@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        *{
+            color: white;
+            margin:1%;
+            padding:10px;
+        }
+
+        ul{
+            list-style: none;
+        }
+        
+        li{
+            color: black;
+            padding:0;
+            text-align: center;
+        }
+
+        li:hover{
+            color: white;
+        }
+
+        header,nav,section,aside,footer{
+            box-sizing: border-box;
+        }
+        header{
+            border: 1px solid black ;
+            background-color: skyblue;
+            width: 98%;
+            height: 50px;
+        }
+        nav{
+            border: 1px solid black ;
+            background-color: pink;
+            width: 15%;
+          
+        }
+        section{
+            border: 1px solid black ;
+            background-color: rgba(0, 128, 0, 0.568);
+            width: 64%;
+        }
+        article{
+            background-color: gray;
+            margin: 30px;
+        }
+        aside{
+            border: 1px solid black ;
+            background-color: pink;
+            width: 15%;
+            
+        }
+
+        nav, section, aside{
+            display: inline-block;
+            float: left;
+            height: 600px;
+        }
+      
+
+        footer{
+            width: 98%;
+            height: 50px;
+            clear: both;
+            border: 1px solid black ;
+            background-color: skyblue;
+        }
+    
+    </style>
+</head>
+    
+<body>
+    <header>header</header>
+    <nav>
+        nav
+        <ul>
+            <li>menu-1</li>
+            <li>menu-2</li>
+            <li>menu-3</li>
+        </ul>
+    </nav>
+    <section>
+        section
+        <article>
+            article
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, voluptates. Magnam nulla facilis quidem eveniet veritatis itaque molestias repudiandae laboriosam suscipit. Possimus reprehenderit doloremque, ipsum iusto amet quis. Possimus, quae?</p>
+        </article>
+    </section>
+    <aside>aside</aside>
+    <footer>footer</footer>
+</body>
+</html>

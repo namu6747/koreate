@@ -1,0 +1,5 @@
+package repositories;
+// DataBase Access Object
+public interface MemberDAO {
+
+}

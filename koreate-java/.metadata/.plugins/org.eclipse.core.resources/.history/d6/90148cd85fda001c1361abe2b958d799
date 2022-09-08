@@ -1,0 +1,30 @@
+package guide_book.dao.stmt;
+
+import java.util.ArrayList;
+
+import guide_book.Book;
+import guide_book.dao.BookDAO;
+
+public class BookSTMTDAOImpl implements BookDAO {
+
+	public int insert(Book book) {
+		return 0;
+	}
+
+	public ArrayList<Book> select() {
+		return null;
+	}
+
+	public int update(Book book) {
+		return 0;
+	}
+
+	public Book selectBook(int num) {
+		return null;
+	}
+
+	public int delete(int num) {
+		return 0;
+	}
+
+}

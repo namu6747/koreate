@@ -1,0 +1,14 @@
+package beans;
+
+public class BoardVO {
+	qna_num;
+	qna_title;
+	qna_content;
+	qna_re_ref;
+	qna_re_lev;
+	qna_re_seq;
+	qna_writer_num;
+	qna_readcount;
+	qna_delete;
+	qna_date;
+}

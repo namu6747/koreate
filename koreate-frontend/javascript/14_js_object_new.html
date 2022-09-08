@@ -1,0 +1,37 @@
+<!-- 4/7 14_js_object_new.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    </style>
+    <script>
+        // 객체의 함수명은 첫 글자는 대문자로 약속
+        function Car(model, speed, color){
+            this.model = model;
+            this.speed = speed;
+            this.color = color;
+            
+            this.accel = function(){
+                this.speed += 10;
+            }
+
+            this.break = function(){
+                this.speed -= 10;
+            }
+        }
+        
+        let choiCar = new Car("GV80",0,"white");
+        let jinCar = new Car("Benz",0,"black");
+
+        console.log(choiCar);
+        console.log(jinCar.model);
+        jinCar.model = "MORNING";
+        console.log(jinCar.model);
+    </script>
+</head>
+    
+<body>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package beans;
+
+public class MemberVO {
+	
+	private int num;	// 회원번호
+	private String id;	// 아이디 : email형식
+	private String pass;// 비밀번호
+	
+	
+}

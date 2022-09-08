@@ -1,0 +1,79 @@
+package service;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import beans.MemberVO;
+import repositories.ManagementDAO;
+import repositories.ManagementDAOImpl;
+
+public class ManagementServiceImpl implements ManagementService{
+	
+	ManagementDAO dao = new ManagementDAOImpl();
+
+	@Override
+	public ArrayList<MemberVO> getMemberList() {
+		return dao.getMemberList();
+	}
+
+	@Override
+	public ArrayList<MemberVO> getMemberList(HttpServletRequest request) {
+		// 현재 사용자가 보고자 하는 페이지 번호
+		int defaultPage = 1;
+		// 한번에 보여줄 목록의 개수
+		int pageCount = 10;
+		
+		String page = request.getParameter("page");
+		if(page != null) {
+			defaultPage = Integer.parseInt(page);
+		}
+		// 시작 행의 번호
+		int startRow = (defaultPage-1) * pageCount;
+		// limit startRow, pageCount;
+		// limit 0, 10;
+		// limit 10, 10;
+		// limit 20, 10;
+		
+		// 36/10 
+		// 전체 회원수
+		int listCount = dao.getMemberListCount();
+		System.out.println("전체 회원 수 : " + listCount);
+		System.out.println("요청 페이지 : " + defaultPage);
+		System.out.println("한 페이지에 출력 할 게시물의 수 : " + pageCount);
+		int displayPageNum = 5;
+		System.out.println("한번에 보여 줄 페이지 블럭의 수 : " + displayPageNum);
+		int maxPage = ((listCount-1) / pageCount)+1; // 3.6 - 3
+		// 1 (0) / 5 0  * 5 +1 1
+		// 2 (1) /5 0.2 0  1
+		// 1 ~ displayGageNum
+		// 6-1 5 5/5 1*5 5 +1 = 6;
+		int startPage = (defaultPage-1) / displayPageNum * displayPageNum +1;
+		int endPage = startPage + (displayPageNum-1);
+		if(endPage > maxPage) {
+			endPage = maxPage;
+		}
+		
+		PageInfo pageInfo = new PageInfo(
+								defaultPage,
+								startPage,
+								endPage,
+								maxPage
+							);
+		request.setAttribute("pageInfo", pageInfo);
+		ArrayList<MemberVO> memberList 
+			= dao.getMemberList(startRow,pageCount);
+		
+		return memberList;
+	}
+
+}
+
+
+
+
+
+
+
+
+

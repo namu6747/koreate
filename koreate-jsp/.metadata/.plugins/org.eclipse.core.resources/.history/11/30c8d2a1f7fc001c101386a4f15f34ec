@@ -1,0 +1,46 @@
+package utils;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+
+public class GoogleAuthentication extends Authenticator{
+	
+	PasswordAuthentication passwordAuthentication;
+	
+	public GoogleAuthentication() {
+		try {
+			Properties prop = new Properties();
+			prop.load(new FileReader(
+				getClass().getResource("../prop/google_mail.properties").getPath()
+			));
+			String id = prop.getProperty("id");
+			String pw = prop.getProperty("pw");
+			passwordAuthentication 
+			 = new PasswordAuthentication(id, pw);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public PasswordAuthentication getPasswordAuthentication() {
+		return passwordAuthentication;
+	}
+
+}
+
+
+
+
+
+
+
+
+

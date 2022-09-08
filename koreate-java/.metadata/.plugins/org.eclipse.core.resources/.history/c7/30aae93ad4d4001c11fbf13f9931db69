@@ -1,0 +1,18 @@
+
+class Animal{}
+
+class Cat extends Animal{}
+
+class Tiger extends Animal{}
+
+public class Test1_1 {
+
+	public static void main(String[] args) {
+		Animal c = new Cat();
+		Animal t = new Tiger();
+	}
+
+}
+
+
+

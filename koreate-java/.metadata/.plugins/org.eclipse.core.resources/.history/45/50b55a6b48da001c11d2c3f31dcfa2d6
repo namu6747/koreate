@@ -1,0 +1,42 @@
+package mysql.a_base;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class StudentExample {
+
+	public static void main(String[] args) {
+		// 사용자에게 학생이름, 학과, 학년 정보를 입력받아
+		// Statement 객체를 이용하여 student table에
+		// 학생에 정보를 저장하는 코드를 작성
+		
+		Connection conn = null;
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/bigdata";
+		String Username = "bigdata";
+		String password = "12345";
+		Scanner sc = new Scanner(System.in);
+		try {
+			Class.forName(driver);
+			System.out.println("드라이버 클래스 커넥티드");
+			conn = DriverManager.getConnection(url, Username, password);
+			System.out.println(conn);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			System.out.println("error");
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				
+			}
+		}
+		
+	}
+
+}
+
+
+
+

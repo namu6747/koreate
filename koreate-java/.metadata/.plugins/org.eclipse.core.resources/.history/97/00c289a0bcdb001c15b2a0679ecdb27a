@@ -1,0 +1,55 @@
+package test;
+
+import java.util.Objects;
+
+class superr {
+	int hash;
+	
+	public superr(int hash) {
+		this.hash = hash;
+	}
+
+
+
+	public static void checker(Object o) {
+		System.out.println(o.getClass());
+		if(o instanceof sub)System.out.println("true");
+		else {System.out.println("false"); return;}
+	}
+}
+
+class sub extends superr {
+
+	public sub(int hash) {
+		super(hash);
+	}
+	
+	@Override
+	public int hashCode() {
+		return hash;
+	}
+	
+}
+
+public class any {
+
+	
+	public static void main(String[] args) {
+		
+		sub a = new sub(5);
+		sub b = new sub(5);
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(a.equals(b));
+		System.out.println(Objects.equals(a, b));
+		superr c = new superr(3);
+		c = a;
+		
+		superr.checker(a);
+		superr.checker(b);
+		superr.checker(c);
+
+				
+	}
+
+}

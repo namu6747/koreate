@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    position: relative;
+    left:50%;
+    background-color: gray;
+    display: flex;
+    width: 480px;
+    height: 60px;
+    margin-left:-240px;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+li{
+    border: 1px solid black;
+    border-right: none;
+    display:block;
+    list-style: none;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    }
+
+    li:last-child{border:1px solid black}
+
+li:hover{
+    background-color: white;
+    color:gray;
+}
